@@ -1,0 +1,5 @@
+levels:
+  "1":
+    reward: "&e1x Player Crates"
+    commands:
+      - "crates give %player% default 1"

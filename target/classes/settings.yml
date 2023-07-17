@@ -1,0 +1,9 @@
+base-price: 100
+price-increase: 1.5
+
+max-level: 100
+
+prefixes:
+  "beginner":
+    levels: [1,2,3,4,5]
+    prefix: "&e[&6%level%&e]"

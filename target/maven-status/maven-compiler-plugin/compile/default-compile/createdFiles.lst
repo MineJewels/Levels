@@ -1,0 +1,11 @@
+org\minejewels\jewelslevels\level\Level.class
+org\minejewels\jewelslevels\player\LevelPlayer.class
+org\minejewels\jewelslevels\registry\LevelRegistry.class
+org\minejewels\jewelslevels\listeners\PlayerJoin.class
+org\minejewels\jewelslevels\commands\sub\LevelSetCommand.class
+org\minejewels\jewelslevels\player\storage\LevelPlayerStorage.class
+org\minejewels\jewelslevels\menus\SkillTreeMenu.class
+org\minejewels\jewelslevels\JewelsLevels.class
+org\minejewels\jewelslevels\registry\PrefixRegistry.class
+org\minejewels\jewelslevels\commands\LevelCommand.class
+org\minejewels\jewelslevels\placeholder\LevelPlaceholder.class

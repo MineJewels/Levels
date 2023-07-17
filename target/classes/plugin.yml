@@ -1,0 +1,4 @@
+name: JewelsLevels
+version: '1.0.0'
+main: org.minejewels.jewelslevels.JewelsLevels
+api-version: '1.19'

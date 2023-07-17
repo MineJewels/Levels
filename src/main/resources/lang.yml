@@ -1,0 +1,21 @@
+messages:
+  "not-enough":
+    message:
+      enabled: true
+      value:
+        - "&c&l[!] &cYou dont have enough LOL"
+  "leveled-up":
+    message:
+      enabled: true
+      value:
+        - "&aRip ur bal LMAO, ur now level %level% and u got %reward%"
+  "already-purchased":
+    message:
+      enabled: true
+      value:
+        - "&9Y&do&3e al&9ready pu&8rcʜᴀsᴇᴅ &6thi&c&ls &blev&2el!"
+  "level-too-high":
+    message:
+      enabled: true
+      value:
+        - "&fleve &8wias like too high <LLKKMQLamLKJILK!"
