@@ -9,3 +9,4 @@ org\minejewels\jewelslevels\JewelsLevels.class
 org\minejewels\jewelslevels\registry\PrefixRegistry.class
 org\minejewels\jewelslevels\commands\LevelCommand.class
 org\minejewels\jewelslevels\placeholder\LevelPlaceholder.class
+org\minejewels\jewelslevels\commands\sub\LevelAddCommand.class

@@ -1,4 +1,19 @@
 messages:
+  "no-permission":
+    message:
+      enabled: true
+      value:
+        - "&c&l[!] &cYou do not have permission"
+  "invalid-player":
+    message:
+      enabled: true
+      value:
+        - "&c&l[!] &cInvalid player!"
+  "invalid-level":
+    message:
+      enabled: true
+      value:
+        - "&c&l[!] &cInvalid level!"
   "not-enough":
     message:
       enabled: true

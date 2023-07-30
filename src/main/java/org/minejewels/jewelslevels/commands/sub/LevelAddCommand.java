@@ -5,24 +5,21 @@ import net.abyssdev.abysslib.command.context.CommandContext;
 import net.abyssdev.abysslib.placeholder.PlaceholderReplacer;
 import net.abyssdev.abysslib.utils.PlayerUtils;
 import net.abyssdev.abysslib.utils.Utils;
-import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Player;
 import org.eclipse.collections.api.factory.Sets;
-import org.eclipse.collections.api.set.ImmutableSet;
 import org.minejewels.jewelslevels.JewelsLevels;
 import org.minejewels.jewelslevels.level.Level;
 import org.minejewels.jewelslevels.player.LevelPlayer;
 
 import java.util.Optional;
 
-public class LevelSetCommand extends AbyssSubCommand<JewelsLevels> {
+public class LevelAddCommand extends AbyssSubCommand<JewelsLevels> {
 
     private final int maxLevel;
 
-    public LevelSetCommand(final JewelsLevels plugin) {
-        super(plugin, 0, Sets.immutable.of("set"));
+    public LevelAddCommand(final JewelsLevels plugin) {
+        super(plugin, 0, Sets.immutable.of("add"));
 
         this.maxLevel = plugin.getSettingsConfig().getInt("max-level");
     }
@@ -52,22 +49,22 @@ public class LevelSetCommand extends AbyssSubCommand<JewelsLevels> {
         }
 
         final OfflinePlayer target = optionalPlayer.get();
+        final LevelPlayer levelPlayer = this.plugin.getPlayerStorage().get(target.getUniqueId());
         final int level = Integer.parseInt(optionalLevel);
 
-        if (level > this.maxLevel) {
+        if (level + levelPlayer.getLevel() > this.maxLevel) {
             this.plugin.getMessageCache().sendMessage(player, "messages.invalid-level");
             return;
         }
 
-        if (level < 1) {
+        if (level + levelPlayer.getLevel() < 1) {
             this.plugin.getMessageCache().sendMessage(player, "messages.invalid-level");
             return;
         }
 
-        final LevelPlayer levelPlayer = this.plugin.getPlayerStorage().get(target.getUniqueId());
-        final Level upgrade = this.plugin.getLevelRegistry().get(level).get();
+        final Level upgrade = this.plugin.getLevelRegistry().get(level + levelPlayer.getLevel()).get();
 
-        levelPlayer.setLevel(level);
+        levelPlayer.addLevel(level);
 
         if (target.isOnline()) {
             PlayerUtils.dispatchCommands(target.getPlayer(), upgrade.getCommands());

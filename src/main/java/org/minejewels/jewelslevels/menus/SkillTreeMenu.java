@@ -7,6 +7,7 @@ import net.abyssdev.abysslib.menu.MenuBuilder;
 import net.abyssdev.abysslib.menu.item.MenuItemBuilder;
 import net.abyssdev.abysslib.menu.templates.PagedAbyssMenu;
 import net.abyssdev.abysslib.placeholder.PlaceholderReplacer;
+import net.abyssdev.abysslib.utils.PlayerUtils;
 import net.abyssdev.abysslib.utils.Utils;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
@@ -146,6 +147,8 @@ public class SkillTreeMenu extends PagedAbyssMenu<JewelsLevels> {
 
                     plugin.getMessageCache().sendMessage(player, "messages.leveled-up", replacer);
                     levelPlayer.addLevel(1);
+
+                    PlayerUtils.dispatchCommands(player, upgrade.getCommands());
 
                     this.open(player, page);
                     return;
