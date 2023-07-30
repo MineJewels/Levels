@@ -1,6 +1,6 @@
 skill-tree:
   title: "&8&lPLAYER SKILL TREE"
-  max-pages: 2
+  max-pages: 1
   rows: 6
   upgrade-slots: [10,19,28,29,30,21,12,13,14,23,32,33,34,25,16]
   borders:
